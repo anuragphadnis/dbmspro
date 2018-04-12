@@ -25,10 +25,10 @@
     <a href="modifyevent.php">
       <button class="btn btn-default" value="addevent" name="addevent">Modify Event</button>
     </a>
-    <a href="delevent.php">
+    <a href="deleteevent.php">
       <button class="btn btn-default" value="addevent" name="addevent">Delete Event</button>
     </a>
-    <a href="showevent.php">
+    <a href="showevents.php">
       <button class="btn btn-default" value="addevent" name="addevent">Show Event</button>
     </a>
     <a href="assignstudents.php">
@@ -46,14 +46,51 @@
     <a href="addadmin.php">
       <button class="btn btn-default">Add Admin</button>
     </a>
-    <a href="modifyadmin.php">
+    <a href="selectevent.php?form=modifyevent2.php">
       <button class="btn btn-default">Modify Admin</button>
     </a>
-    <a href="deladmin.php">
+    <a href="deleteadmin.php">
       <button class="btn btn-default">Delete Admin</button>
     </a>
-
   </div>
-  </a>
+  <br><br>
+  <div class="label">Registration:
+    <a href="register.php">
+      <button class="btn btn-default">Register for events</button>
+    </a>
+    <a href="showreg.php">
+      <button class="btn btn-default">Show Registered people</button>
+    </a>
+  </div>
+  <br><br>
+  <div class="label">Sponsorship:
+    <a href="sponsoradd.php">
+      <button class="btn btn-default">Add Sponsor Data</button>
+    </a>
+    <a href="sponsorreq.php">
+      <button class="btn btn-default">Add Sponsor Requirments</button>
+    </a>
+    <a href="sponsorremove.php">
+      <button class="btn btn-default">Remove sponsor data</button>
+    </a>
+    <a href="sponsorshow.php">
+      <button class="btn btn-default">Show sponsor data</button>
+    </a>
+  </div>
+  <br><br>
+  <div class="label">Bus Routes:
+    <a href="addbus.php">
+      <button class="btn btn-default">Add Bus</button>
+    </a>
+    <a href="modifybus.php">
+      <button class="btn btn-default">Modify Bus</button>
+    </a>
+    <a href="deletebus.php">
+      <button class="btn btn-default">Delete Bus</button>
+    </a>
+    <a href="showbus.php">
+      <button class="btn btn-default">Show Bus</button>
+    </a>
+  </div>
 </body>
 </html>
