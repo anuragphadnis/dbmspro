@@ -20,25 +20,43 @@
   <br>
   <div class="label">Events:
     <a href="addevent.php">
-      <button class="btn btn-default" value="addevent" name="addevent">Add Event</button>
+      <button class="btn btn-default">Add Event</button>
     </a>
-    <a href="modifyevent.php">
-      <button class="btn btn-default" value="addevent" name="addevent">Modify Event</button>
+    <a href="selectevent.php?form=modifyevent2.php">
+      <button class="btn btn-default">Modify Event</button>
     </a>
-    <a href="deleteevent.php">
-      <button class="btn btn-default" value="addevent" name="addevent">Delete Event</button>
+    <a href="selectevent.php?form=deleteevent2.php">
+      <button class="btn btn-default">Delete Event</button>
     </a>
-    <a href="showevents.php">
-      <button class="btn btn-default" value="addevent" name="addevent">Show Event</button>
+    <a href="selectevent.php?form=showevents2.php">
+      <button class="btn btn-default">Show Event</button>
     </a>
-    <a href="assignstudents.php">
-      <button class="btn btn-default" value="addevent" name="addevent">Assign Student Coordinators</button>
+  </div>
+  <br><br>
+  <div class="label">Student Coordinators:
+    <a href="selectevent.php?form=assignstudents2.php">
+      <button class="btn btn-default">Assign Student Coordinators</button>
     </a>
-    <a href="assignfaculty.php">
-      <button class="btn btn-default" value="addevent" name="addevent">Add Faculty Coordinators</button>
+    <a href="selectevent.php?form=viewstudents2.php">
+      <button class="btn btn-default">View Student Coordinators</button>
     </a>
-    <a href="assignlocation.php">
-      <button class="btn btn-default" value="addevent" name="addevent">Add Location for Event</button>
+  </div>
+  <br><br>
+  <div class="label">Faculty Coordinators
+    <a href="selectevent.php?form=assignfaculty2.php">
+      <button class="btn btn-default">Add Faculty Coordinators</button>
+    </a>
+    <a href="selectevent.php?form=viewfaculty2.php">
+      <button class="btn btn-default">View Faculty Coordinators</button>
+    </a>
+  </div>
+  <br><br>
+  <div class="label">Location for Events:
+    <a href="selectevent.php?form=assignlocation2.php">
+      <button class="btn btn-default">Add Location for Event</button>
+    </a>
+    <a href="selectevent.php?form=viewlocation2.php">
+      <button class="btn btn-default">View Location for Event</button>
     </a>
   </div>
   <br><br>
@@ -46,10 +64,10 @@
     <a href="addadmin.php">
       <button class="btn btn-default">Add Admin</button>
     </a>
-    <a href="selectevent.php?form=modifyevent2.php">
+    <a href="selectadmin.php?form=modifyadmin2.php">
       <button class="btn btn-default">Modify Admin</button>
     </a>
-    <a href="deleteadmin.php">
+    <a href="selectadmin.php?form=deleteadmin.php">
       <button class="btn btn-default">Delete Admin</button>
     </a>
   </div>

@@ -18,17 +18,11 @@
 </head>
 <body>
   <?php
-  include "dbinit.php";
+    $name=$_POST['name'];
     $evtitle=$_POST['evtitle'];
+    include "dbinit.php";
+    $qr="insert into locations values('$name','$evtitle')";
+    $sqlqr=mysqli_query($con,$qr)or die(mysqli_error($con));
+    echo "Upload success";
    ?>
-  <div class="container">
-  <div class="row">
-    <form method="POST" action="submitstudents.php">
-      <div class="col-xs-12 form-group"><label for="name"> Student Name:</label><input class="form-control" id="name" type="text" name="name" placeholder="Enter Student Name" ></div>
-      <div class="col-xs-12 form-group"><label for="enrollno"> Enrollment No.:</label><input required class="form-control" id ="enrollno" type="text" name="enrollno" placeholder="Enter enrollmentno" ></div>
-      <select name="evtitle" class="invisible"><option><?php echo $evtitle?></option></select>
-      <div class="col-xs-12 form-group"><center><button class="btn btn-default">Submit</button></center></div>
-    </form>
-  </div>
-</div>
 </body>

@@ -18,30 +18,18 @@
 </head>
 <body>
   <?php
-    $form=$_GET['form'];
-  ?>
+  include "dbinit.php";
+    $evtitle=$_POST['evtitle'];
+    $qr="select name,enrollmentno from students where evtitle='$evtitle'";
+    $sqlqr=mysqli_query($con,$qr) or die("Error while retriving data");
+   ?>
   <div class="container">
   <div class="row">
-    <form method="POST" action=<?php echo $form?>>
-      <div class="form-group">
-        <label for="adminid">Select Event:</label>
-        <select class="form-group" name="evtitle" id="evtitle">
-        <?php
-        include "dbinit.php";
-        $qu="select title from events where 1";
-        $sqlqr=mysqli_query($con,$qu)or die("Some error occured while retriving data");
-        while($row=mysqli_fetch_array($sqlqr))
-        {
-          echo "<option> $row[0] </option>";
-        }
-            mysqli_close($con);
-        ?>
-      </select></div>
-      <center><div class="col-xs-12"><button type="submit" class="btn btn-default">Submit</button></div></center>
+    <form method="POST" action="submitstudents.php">
+      <div class="col-xs-12 form-group"><label for="name"> Student Name:</label><input disabled class="form-control" id="name" type="text" name="name" placeholder="Enter Student Name" ></div>
+      <div class="col-xs-12 form-group"><label for="enrollno"> Enrollment No.:</label><input disabled required class="form-control" id ="enrollno" type="text" name="enrollno" placeholder="Enter enrollmentno" ></div>
+      <select name="evtitle" class="invisible"><option><?php echo $evtitle?></option></select>
     </form>
   </div>
 </div>
 </body>
-
-<?php
-?>

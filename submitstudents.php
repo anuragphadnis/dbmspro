@@ -22,7 +22,7 @@
     $enroll=$_POST['enrollno'];
     $evtitle=$_POST['evtitle'];
     include "dbinit.php";
-    $qr="insert into students values('$name','$enroll','$evtitle')";
+    $qr="insert into students values('$name','$evtitle','$enroll')";
     $sqlqr=mysqli_query($con,$qr)or die(mysqli_error($con));
     echo "Upload success";
    ?>

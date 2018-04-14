@@ -20,15 +20,18 @@
   <?php
   include "dbinit.php";
     $evtitle=$_POST['evtitle'];
-   ?>
-  <div class="container">
-  <div class="row">
-    <form method="POST" action="submitstudents.php">
-      <div class="col-xs-12 form-group"><label for="name"> Student Name:</label><input class="form-control" id="name" type="text" name="name" placeholder="Enter Student Name" ></div>
-      <div class="col-xs-12 form-group"><label for="enrollno"> Enrollment No.:</label><input required class="form-control" id ="enrollno" type="text" name="enrollno" placeholder="Enter enrollmentno" ></div>
-      <select name="evtitle" class="invisible"><option><?php echo $evtitle?></option></select>
-      <div class="col-xs-12 form-group"><center><button class="btn btn-default">Submit</button></center></div>
-    </form>
-  </div>
-</div>
+    $qr="select * from locations where evtitle='$evtitle'";
+    $sqlqr=mysqli_query($con,$qr) or die("Error while retriving data");
+    $row=mysqli_fetch_assoc($sqlqr);
+    ?>
+      <div class='container'>
+      <div class='row'>
+        <form >
+          <div class='col-xs-12 form-group'><label for='name'> Location Name:</label><input disabled class='form-control' id='name' type='text' name='name' placeholder='Enter Student Name' value=<?php
+            echo $row['name'];
+          ?> ></div>
+        </form>
+      </div>
+    </div>
+    <hr>
 </body>

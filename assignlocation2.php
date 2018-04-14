@@ -18,30 +18,16 @@
 </head>
 <body>
   <?php
-    $form=$_GET['form'];
-  ?>
+  include "dbinit.php";
+    $evtitle=$_POST['evtitle'];
+   ?>
   <div class="container">
   <div class="row">
-    <form method="POST" action=<?php echo $form?>>
-      <div class="form-group">
-        <label for="adminid">Select Event:</label>
-        <select class="form-group" name="evtitle" id="evtitle">
-        <?php
-        include "dbinit.php";
-        $qu="select title from events where 1";
-        $sqlqr=mysqli_query($con,$qu)or die("Some error occured while retriving data");
-        while($row=mysqli_fetch_array($sqlqr))
-        {
-          echo "<option> $row[0] </option>";
-        }
-            mysqli_close($con);
-        ?>
-      </select></div>
-      <center><div class="col-xs-12"><button type="submit" class="btn btn-default">Submit</button></div></center>
+    <form method="POST" action="submitlocation.php">
+      <div class="col-xs-12 form-group"><label for="name"> Location Name:</label><input class="form-control" id="name" type="text" name="name" placeholder="Enter Location Name" ></div>
+      <select name="evtitle" class="invisible"><option><?php echo $evtitle?></option></select>
+      <div class="col-xs-12 form-group"><center><button class="btn btn-default">Submit</button></center></div>
     </form>
   </div>
 </div>
 </body>
-
-<?php
-?>

@@ -20,15 +20,21 @@
   <?php
   include "dbinit.php";
     $evtitle=$_POST['evtitle'];
+    $qr="select * from faculty where evtitle='$evtitle'";
+    $sqlqr=mysqli_query($con,$qr) or die("Error while retriving data");
+    while($row=mysqli_fetch_array($sqlqr))
+    {
+      echo "
+      <div class='container'>
+      <div class='row'>
+        <form >
+          <div class='col-xs-12 form-group'><label for='name'> Student Name:</label><input disabled class='form-control' id='name' type='text' name='name' placeholder='Enter Student Name' value=$row[2] ></div>
+          <div class='col-xs-12 form-group'><label for='enrollno'> Enrollment No.:</label><input disabled required class='form-control' id ='enrollno' type='text' name='enrollno' placeholder='Enter enrollmentno' value=$row[1] ></div>
+        </form>
+      </div>
+    </div>
+    <hr>
+      ";
+    }
    ?>
-  <div class="container">
-  <div class="row">
-    <form method="POST" action="submitstudents.php">
-      <div class="col-xs-12 form-group"><label for="name"> Student Name:</label><input class="form-control" id="name" type="text" name="name" placeholder="Enter Student Name" ></div>
-      <div class="col-xs-12 form-group"><label for="enrollno"> Enrollment No.:</label><input required class="form-control" id ="enrollno" type="text" name="enrollno" placeholder="Enter enrollmentno" ></div>
-      <select name="evtitle" class="invisible"><option><?php echo $evtitle?></option></select>
-      <div class="col-xs-12 form-group"><center><button class="btn btn-default">Submit</button></center></div>
-    </form>
-  </div>
-</div>
 </body>
