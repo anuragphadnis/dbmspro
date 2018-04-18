@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 11, 2018 at 06:02 PM
+-- Generation Time: Apr 18, 2018 at 06:59 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.3
 
@@ -40,7 +40,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`adminid`, `fname`, `lname`, `pwd`) VALUES
-('admin1', 'Hello', 'World', '123456');
+('Admin1', 'Hello', 'World', '123456');
 
 -- --------------------------------------------------------
 
@@ -52,11 +52,18 @@ CREATE TABLE `events` (
   `title` varchar(30) NOT NULL,
   `description` varchar(1000) DEFAULT NULL,
   `regprice` int(11) DEFAULT NULL,
-  `cahsprize` int(11) DEFAULT NULL,
-  `evedate` date DEFAULT NULL,
   `evtime` time DEFAULT NULL,
-  `adminid` varchar(30) DEFAULT NULL
+  `adminid` varchar(30) DEFAULT NULL,
+  `cashprize` int(11) DEFAULT NULL,
+  `evdate` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `events`
+--
+
+INSERT INTO `events` (`title`, `description`, `regprice`, `evtime`, `adminid`, `cashprize`, `evdate`) VALUES
+('Testinng', 'This', 1000, '00:00:00', 'Admin1', 1000, '2018-04-24');
 
 -- --------------------------------------------------------
 
@@ -65,10 +72,9 @@ CREATE TABLE `events` (
 --
 
 CREATE TABLE `faculty` (
-  `fname` varchar(50) DEFAULT NULL,
-  `lname` varchar(50) DEFAULT NULL,
   `evtitle` varchar(30) DEFAULT NULL,
-  `uid` varchar(15) NOT NULL
+  `uid` varchar(15) NOT NULL,
+  `name` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -99,7 +105,8 @@ CREATE TABLE `regpeople` (
   `college` varchar(30) DEFAULT NULL,
   `semester` int(11) DEFAULT NULL,
   `branch` varchar(30) DEFAULT NULL,
-  `course` varchar(30) DEFAULT NULL
+  `course` varchar(30) DEFAULT NULL,
+  `name` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -125,6 +132,13 @@ CREATE TABLE `students` (
   `evtitle` varchar(30) DEFAULT NULL,
   `enrollmentno` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `students`
+--
+
+INSERT INTO `students` (`name`, `evtitle`, `enrollmentno`) VALUES
+('MyName', 'Testinng', '1');
 
 --
 -- Indexes for dumped tables
@@ -184,25 +198,25 @@ ALTER TABLE `students`
 -- Constraints for table `events`
 --
 ALTER TABLE `events`
-  ADD CONSTRAINT `fk_adminid` FOREIGN KEY (`adminid`) REFERENCES `admin` (`adminid`);
+  ADD CONSTRAINT `fk_adminid` FOREIGN KEY (`adminid`) REFERENCES `admin` (`adminid`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `faculty`
 --
 ALTER TABLE `faculty`
-  ADD CONSTRAINT `faculty_ibfk_1` FOREIGN KEY (`evtitle`) REFERENCES `events` (`title`);
+  ADD CONSTRAINT `faculty_ibfk_1` FOREIGN KEY (`evtitle`) REFERENCES `events` (`title`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `locations`
 --
 ALTER TABLE `locations`
-  ADD CONSTRAINT `locations_ibfk_1` FOREIGN KEY (`evtitle`) REFERENCES `events` (`title`);
+  ADD CONSTRAINT `locations_ibfk_1` FOREIGN KEY (`evtitle`) REFERENCES `events` (`title`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `regpeople`
 --
 ALTER TABLE `regpeople`
-  ADD CONSTRAINT `fk_regevent` FOREIGN KEY (`evtitle`) REFERENCES `events` (`title`);
+  ADD CONSTRAINT `fk_regevent` FOREIGN KEY (`evtitle`) REFERENCES `events` (`title`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `sponsordata`
@@ -214,7 +228,7 @@ ALTER TABLE `sponsordata`
 -- Constraints for table `students`
 --
 ALTER TABLE `students`
-  ADD CONSTRAINT `students_ibfk_1` FOREIGN KEY (`evtitle`) REFERENCES `events` (`title`);
+  ADD CONSTRAINT `students_ibfk_1` FOREIGN KEY (`evtitle`) REFERENCES `events` (`title`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
