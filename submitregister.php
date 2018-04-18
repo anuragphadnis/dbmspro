@@ -19,16 +19,23 @@
 <body>
   <?php
     $evtitle=$_POST['evtitle'];
-    $evdesc=$_POST['description'];
-    $regprice=$_POST['regprice'];
-    $cashprize=$_POST['cashprize'];
-    $evdate=$_POST['evdate'];
-    $evdate=date('y-m-d',strtotime($evdate));
-    $evtime=$_POST['evtime'];
-    $adminid=$_POST['adminid'];
+    $name=$_POST['name'];
+    $cno=(int)$_POST['cno'];
+    $email=$_POST['email'];
+    $add1=$_POST["add1"];
+    $add2=$_POST["add2"];
+    $city=$_POST['city'];
+    $clg=$_POST['clg'];
+    $sem=$_POST['sem'];
+    $course=$_POST['course'];
+    $branch=$_POST['branch'];
     include "dbinit.php";
-    $qr="update events set regprice='$regprice',cashprize='$cashprize',evdate='$evdate',evtime='$evtime',adminid='$adminid',description='$evdesc' where title='$evtitle'";
-    echo $qr;
+    $qr="
+    insert into regpeople
+    (evtitle, cno, email, address1, address2, city, college, semester, branch, course, name)
+    VALUES
+    ('$evtitle','$cno','$email','$add1','$add2','$city','$clg','$sem','$branch','$course','$name');
+    ";
     $sqlqr=mysqli_query($con,$qr)or die(mysqli_error($con));
     echo "Upload success";
    ?>

@@ -73,10 +73,10 @@
   </div>
   <br><br>
   <div class="label">Registration:
-    <a href="register.php">
+    <a href="selectevent.php?form=addregister2.php">
       <button class="btn btn-default">Register for events</button>
     </a>
-    <a href="showreg.php">
+    <a href="selectevent.php?form=viewregister.php">
       <button class="btn btn-default">Show Registered people</button>
     </a>
   </div>

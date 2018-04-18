@@ -51,7 +51,7 @@
             mysqli_close($con);
       ?>
     </select>
-    <div class="col-xs-12 form-group"><input class="form-control invisible" id="evtitle" type="text" name="evtitle" placeholder="Enter Event Title"></div>
+    <div class="col-xs-12 form-group"><input class="form-control invisible" id="evtitle" type="text" name="evtitle" placeholder="Enter Event Title" value=<?php echo $evtitle;?>></div>
 
       <center><div class="col-xs-12"><button type="submit" class="btn btn-default">Submit</button></div></center>
     </form>
