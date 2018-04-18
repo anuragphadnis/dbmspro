@@ -18,18 +18,18 @@
 </head>
 <body>
   <?php
-    $evtitle=$_POST['evtitle'];
-    $evdesc=$_POST['description'];
-    $regprice=$_POST['regprice'];
-    $cashprize=$_POST['cashprize'];
-    $evdate=$_POST['evdate'];
-    $evdate=date('y-m-d',strtotime($evdate));
-    $evtime=$_POST['evtime'];
-    $adminid=$_POST['adminid'];
-    include "dbinit.php";
-    $qr="update events set description='$evdesc',regprice='$regprice',cashprize='$cashprize',evdate='$evdate',evtime='$evtime',adminid='$adminid' where title='$evtitle'";
-    echo $qr;
-    $sqlqr=mysqli_query($con,$qr)or die(mysqli_error($con));
-    echo "Upload success";
-   ?>
+  ?>
+  <div class="container">
+  <div class="row">
+    <?php
+      include 'dbinit.php';
+      $evtitle=$_POST['evtitle'];
+      $uid=$_POST['uid'];
+      $qu="delete from students where enrollmentno= '$uid'";
+    //  echo $qu;
+      $sqlqr=mysqli_query($con,$qu) or die("Error while trying to delete");
+      echo"Delte Success";
+    ?>
+  </div>
+</div>
 </body>

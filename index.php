@@ -40,6 +40,9 @@
     <a href="selectevent.php?form=viewstudents2.php">
       <button class="btn btn-default">View Student Coordinators</button>
     </a>
+    <a href="selectevent.php?form=deletestudent.php">
+      <button class="btn btn-default">Delete Student Coordinators</button>
+    </a>
   </div>
   <br><br>
   <div class="label">Faculty Coordinators
@@ -48,6 +51,9 @@
     </a>
     <a href="selectevent.php?form=viewfaculty2.php">
       <button class="btn btn-default">View Faculty Coordinators</button>
+    </a>
+    <a href="selectevent.php?form=deletefaculty.php">
+      <button class="btn btn-default">Delete Faculty Coordinators</button>
     </a>
   </div>
   <br><br>
@@ -58,6 +64,9 @@
     <a href="selectevent.php?form=viewlocation2.php">
       <button class="btn btn-default">View Location for Event</button>
     </a>
+    <a href="selectevent.php?form=deletelocation.php">
+      <button class="btn btn-default">Delete Location for Event</button>
+    </a>
   </div>
   <br><br>
   <div class="label">Admin:
@@ -67,7 +76,7 @@
     <a href="selectadmin.php?form=modifyadmin2.php">
       <button class="btn btn-default">Modify Admin</button>
     </a>
-    <a href="selectadmin.php?form=deleteadmin.php">
+    <a href="selectadmin.php?form=deleteadmin2.php">
       <button class="btn btn-default">Delete Admin</button>
     </a>
   </div>
