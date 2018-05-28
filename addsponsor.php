@@ -18,18 +18,17 @@
 </head>
 <body>
   <?php
+  include "dbinit.php";
     $evtitle=$_POST['evtitle'];
-    $evdesc=$_POST['description'];
-    $regprice=$_POST['regprice'];
-    $cashprize=$_POST['cashprize'];
-    $evdate=$_POST["evdate"];
-    $evdate=date('y-m-d',strtotime($evdate));
-    $evtime=$_POST["evtime"];
-    $adminid=$_POST['adminid'];
-    include "dbinit.php";
-    $qr="insert into events(title,description,regprice,adminid,cashprize,evdate,evtime) values('$evtitle','$evdesc','$regprice','$adminid','$cashprize','$evdate','$evtime')";
-    echo $qr;
-    $sqlqr=mysqli_query($con,$qr)or die(mysqli_error($con));
-    echo "Upload success";
    ?>
+  <div class="container">
+  <div class="row">
+    <form method="POST" action="submitsponsor.php">
+      <div class="col-xs-12 form-group"><label for="name"> Name:</label><input class="form-control" id="name" type="text" name="name" placeholder="Enter Sponsor Name" ></div>
+      <div class="col-xs-12 form-group"><label for="amount"> Amount :</label><input required class="form-control" id ="amount" type="number" name="amount" placeholder="Enter Amount" ></div>
+      <select name="evtitle" class="invisible"><option><?php echo $evtitle?></option></select>
+      <div class="col-xs-12 form-group"><center><button class="btn btn-default">Submit</button></center></div>
+    </form>
+  </div>
+</div>
 </body>

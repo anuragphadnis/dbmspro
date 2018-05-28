@@ -18,18 +18,16 @@
 </head>
 <body>
   <?php
-    $evtitle=$_POST['evtitle'];
-    $evdesc=$_POST['description'];
-    $regprice=$_POST['regprice'];
-    $cashprize=$_POST['cashprize'];
-    $evdate=$_POST["evdate"];
-    $evdate=date('y-m-d',strtotime($evdate));
-    $evtime=$_POST["evtime"];
-    $adminid=$_POST['adminid'];
-    include "dbinit.php";
-    $qr="insert into events(title,description,regprice,adminid,cashprize,evdate,evtime) values('$evtitle','$evdesc','$regprice','$adminid','$cashprize','$evdate','$evtime')";
-    echo $qr;
-    $sqlqr=mysqli_query($con,$qr)or die(mysqli_error($con));
-    echo "Upload success";
+  include "dbinit.php";
+    $spname=$_POST['spname'];
    ?>
+  <div class="container">
+  <div class="row">
+    <form method="POST" action="submitsponsorreq.php">
+      <div class="col-xs-12 form-group"><label for="name"> Enter Requirment:</label><input class="form-control" id="name" type="text" name="spreq" placeholder="Enter Requirment (One at a time)" ></div>
+      <select name="spname" class="invisible"><option><?php echo $spname?></option></select>
+      <div class="col-xs-12 form-group"><center><button class="btn btn-default">Submit</button></center></div>
+    </form>
+  </div>
+</div>
 </body>

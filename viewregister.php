@@ -28,7 +28,7 @@
     <?php
     while($row=mysqli_fetch_array($sqlqr))
     {
-      echo"
+      echo "
       <div class='col-xs-12 form-group'><label for='name'>Name:</label><input disabled class='form-control' id='name' type='text' name='name' placeholder='Enter Name' value=$row[name]></div>
       <div class='col-xs-12 form-group'><label for='cno'>Contact Number:</label><input disabled class='form-control' id='cno' type='number' name='cno' placeholder='Enter Contact Number'value=$row[cno] ></div>
       <div class='col-xs-12 form-group'><label for='email'>Email ID:</label><input disabled class='form-control' id='email' type='email' name='email' placeholder='Enter Email ID' value=$row[email]></div>
@@ -39,7 +39,6 @@
       <div class='col-xs-12 form-group'><label for='clg'>Semester:</label><input class='form-control'disabled id='sem' type='text' name='sem' placeholder='Enter College' value=$row[semester]></div>
       <div class='col-xs-12 form-group'><label for='course'>Course:</label><input class='form-control' disabled id='course' type='text' name='course' placeholder='Enter Degree Name' value=$row[course]></div>
       <div class='col-xs-12 form-group'><label for='branch'>Branch:</label><input class='form-control' disabled id='branch' type='text' name='branch' placeholder='Enter Branch Name' value=$row[branch]></div>
-      <hr>
       ";
     }
       ?>

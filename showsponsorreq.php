@@ -18,18 +18,13 @@
 </head>
 <body>
   <?php
-    $evtitle=$_POST['evtitle'];
-    $evdesc=$_POST['description'];
-    $regprice=$_POST['regprice'];
-    $cashprize=$_POST['cashprize'];
-    $evdate=$_POST["evdate"];
-    $evdate=date('y-m-d',strtotime($evdate));
-    $evtime=$_POST["evtime"];
-    $adminid=$_POST['adminid'];
-    include "dbinit.php";
-    $qr="insert into events(title,description,regprice,adminid,cashprize,evdate,evtime) values('$evtitle','$evdesc','$regprice','$adminid','$cashprize','$evdate','$evtime')";
-    echo $qr;
-    $sqlqr=mysqli_query($con,$qr)or die(mysqli_error($con));
-    echo "Upload success";
+  include "dbinit.php";
+    $spname=$_POST['spname'];
+    $qr="select * from demands where name_of_sponser='$spname'";
+    $sqlqr=mysqli_query($con,$qr) or die("Error while retriving data");
+    while($row=mysqli_fetch_array($sqlqr))
+    {
+      echo "$row[1]\n";
+    }
    ?>
 </body>

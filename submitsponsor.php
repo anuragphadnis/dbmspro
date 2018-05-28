@@ -18,17 +18,11 @@
 </head>
 <body>
   <?php
+    $name=$_POST['name'];
+    $amount=$_POST['amount'];
     $evtitle=$_POST['evtitle'];
-    $evdesc=$_POST['description'];
-    $regprice=$_POST['regprice'];
-    $cashprize=$_POST['cashprize'];
-    $evdate=$_POST["evdate"];
-    $evdate=date('y-m-d',strtotime($evdate));
-    $evtime=$_POST["evtime"];
-    $adminid=$_POST['adminid'];
     include "dbinit.php";
-    $qr="insert into events(title,description,regprice,adminid,cashprize,evdate,evtime) values('$evtitle','$evdesc','$regprice','$adminid','$cashprize','$evdate','$evtime')";
-    echo $qr;
+    $qr="insert into sponser values('$name','$evtitle','$amount')";
     $sqlqr=mysqli_query($con,$qr)or die(mysqli_error($con));
     echo "Upload success";
    ?>

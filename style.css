@@ -8,3 +8,18 @@
 {
   visibility: hidden;
 }
+tr
+{
+}
+td
+{
+  font-style: oblique;
+  border: solid;
+  border-width: 1px;
+  border-color: #000;
+}
+th  
+{
+  border: solid;
+  border-width: 1px;
+}

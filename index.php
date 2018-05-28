@@ -69,6 +69,15 @@
     </a>
   </div>
   <br><br>
+  <div class="label">Event Requirements:
+    <a href="selectevent.php?form=addreq.php">
+      <button class="btn btn-default">Add Event Requirements</button>
+    </a>
+    <a href="selectevent.php?form=showreq.php">
+      <button class="btn btn-default">Show Event Requirements</button>
+    </a>
+  </div>
+  <br><br>
   <div class="label">Admin:
     <a href="addadmin.php">
       <button class="btn btn-default">Add Admin</button>
@@ -91,17 +100,17 @@
   </div>
   <br><br>
   <div class="label">Sponsorship:
-    <a href="sponsoradd.php">
+    <a href="selectevent.php?form=addsponsor.php">
       <button class="btn btn-default">Add Sponsor Data</button>
     </a>
-    <a href="sponsorreq.php">
+    <a href="selectsponsor.php?name=addsponsorreq.php">
       <button class="btn btn-default">Add Sponsor Requirments</button>
     </a>
-    <a href="sponsorremove.php">
-      <button class="btn btn-default">Remove sponsor data</button>
-    </a>
-    <a href="sponsorshow.php">
+    <a href="selectevent.php?form=showsponsordata.php">
       <button class="btn btn-default">Show sponsor data</button>
+    </a>
+    <a href="selectsponsor.php?name=showsponsorreq.php">
+      <button class="btn btn-default">Show sponsor Requirments</button>
     </a>
   </div>
   <br><br>
@@ -109,14 +118,14 @@
     <a href="addbus.php">
       <button class="btn btn-default">Add Bus</button>
     </a>
-    <a href="modifybus.php">
-      <button class="btn btn-default">Modify Bus</button>
-    </a>
-    <a href="deletebus.php">
+    <a href="selectbus.php?form=deletebus.php">
       <button class="btn btn-default">Delete Bus</button>
     </a>
-    <a href="showbus.php">
+    <a href="selectbus.php?form=showbus.php">
       <button class="btn btn-default">Show Bus</button>
+    </a>
+    <a href="selectbus.php?form=addstop2.php">
+      <button class="btn btn-default">Add Bus Stop</button>
     </a>
   </div>
 </body>

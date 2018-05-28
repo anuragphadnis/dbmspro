@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 11, 2018 at 06:02 PM
+-- Generation Time: Apr 18, 2018 at 06:06 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.3
 
@@ -58,6 +58,13 @@ CREATE TABLE `events` (
   `adminid` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `events`
+--
+
+INSERT INTO `events` (`title`, `description`, `regprice`, `cahsprize`, `evedate`, `evtime`, `adminid`) VALUES
+('Testing', 'Description', 100, 1000, '2018-04-11', '00:00:00', 'admin1');
+
 -- --------------------------------------------------------
 
 --
@@ -65,10 +72,9 @@ CREATE TABLE `events` (
 --
 
 CREATE TABLE `faculty` (
-  `fname` varchar(50) DEFAULT NULL,
-  `lname` varchar(50) DEFAULT NULL,
   `evtitle` varchar(30) DEFAULT NULL,
-  `uid` varchar(15) NOT NULL
+  `uid` varchar(15) NOT NULL,
+  `name` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -81,6 +87,13 @@ CREATE TABLE `locations` (
   `name` varchar(50) DEFAULT NULL,
   `evtitle` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `locations`
+--
+
+INSERT INTO `locations` (`name`, `evtitle`) VALUES
+('Canteen', 'Testing');
 
 -- --------------------------------------------------------
 
@@ -99,8 +112,16 @@ CREATE TABLE `regpeople` (
   `college` varchar(30) DEFAULT NULL,
   `semester` int(11) DEFAULT NULL,
   `branch` varchar(30) DEFAULT NULL,
-  `course` varchar(30) DEFAULT NULL
+  `course` varchar(30) DEFAULT NULL,
+  `name` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `regpeople`
+--
+
+INSERT INTO `regpeople` (`uid`, `evtitle`, `cno`, `email`, `address1`, `address2`, `city`, `college`, `semester`, `branch`, `course`, `name`) VALUES
+(0, 'Testing', 2147483647, 'ppa@gmal.com', '11', '133', 'INdore', 'aass', 1, 'none', 'none', 'aa');
 
 -- --------------------------------------------------------
 
@@ -125,6 +146,13 @@ CREATE TABLE `students` (
   `evtitle` varchar(30) DEFAULT NULL,
   `enrollmentno` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `students`
+--
+
+INSERT INTO `students` (`name`, `evtitle`, `enrollmentno`) VALUES
+('Anurag', 'Testing', '11');
 
 --
 -- Indexes for dumped tables

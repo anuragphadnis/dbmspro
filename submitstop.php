@@ -18,17 +18,12 @@
 </head>
 <body>
   <?php
-    $evtitle=$_POST['evtitle'];
-    $evdesc=$_POST['description'];
-    $regprice=$_POST['regprice'];
-    $cashprize=$_POST['cashprize'];
-    $evdate=$_POST["evdate"];
-    $evdate=date('y-m-d',strtotime($evdate));
-    $evtime=$_POST["evtime"];
-    $adminid=$_POST['adminid'];
+    $busno=$_POST['busno'];
+    $stop=$_POST['stop'];
+    $at=$_POST['at'];
+    $dt=$_POST['dt'];
     include "dbinit.php";
-    $qr="insert into events(title,description,regprice,adminid,cashprize,evdate,evtime) values('$evtitle','$evdesc','$regprice','$adminid','$cashprize','$evdate','$evtime')";
-    echo $qr;
+    $qr="insert into busstop values('$busno','$stop','$at','$dt')";
     $sqlqr=mysqli_query($con,$qr)or die(mysqli_error($con));
     echo "Upload success";
    ?>

@@ -18,18 +18,22 @@
 </head>
 <body>
   <?php
+  include "dbinit.php";
     $evtitle=$_POST['evtitle'];
-    $evdesc=$_POST['description'];
-    $regprice=$_POST['regprice'];
-    $cashprize=$_POST['cashprize'];
-    $evdate=$_POST["evdate"];
-    $evdate=date('y-m-d',strtotime($evdate));
-    $evtime=$_POST["evtime"];
-    $adminid=$_POST['adminid'];
-    include "dbinit.php";
-    $qr="insert into events(title,description,regprice,adminid,cashprize,evdate,evtime) values('$evtitle','$evdesc','$regprice','$adminid','$cashprize','$evdate','$evtime')";
-    echo $qr;
-    $sqlqr=mysqli_query($con,$qr)or die(mysqli_error($con));
-    echo "Upload success";
+    $qr="select material_list ,number_of_material from studentreq where event_title='$evtitle'";
+    $sqlqr=mysqli_query($con,$qr) or die("Error while retriving data");
+    echo '<table>
+    <tr>
+      <th>Requirment</th>
+      <th>Quantity</th>
+    </tr>';
+    while($row=mysqli_fetch_array($sqlqr))
+    {
+      echo "<tr>
+      <td>$row[0]</td>
+      <td>$row[1]</td>
+      </tr>";
+    }
+    echo '</table>';
    ?>
 </body>
